@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Generar PDF</string>
+    <string name="boton">Generar PDF</string>
+    <string name="textoDePrueba">Esto es un texto de prueba...a ver como sale</string>
+    <string name="textoDePrueba2">Esto otro texto de prueba...veremos a ver como sale</string>
+    <string name="textoDefinitivo">"Estoy probando como se hace un txt y parece que funciona. Con los PDF no funciona y no se si es por el lugar de almacenamiento del fichero"</string>
+</resources>
