@@ -4,7 +4,6 @@ import android.graphics.pdf.PdfDocument;
 import android.os.Environment;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 
@@ -27,13 +26,13 @@ public class VisualizarPdf extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 MainActivity.printShort(VisualizarPdf.this, "prueba");
-                pruebas();
+                generarPDF();
             }
         });
 
     }
 
-    public void pruebas(){
+    public void generarPDF(){
 
         PdfDocument document = new PdfDocument();
 

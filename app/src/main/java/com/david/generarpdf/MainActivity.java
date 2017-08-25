@@ -3,8 +3,6 @@ package com.david.generarpdf;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.graphics.Rect;
 import android.graphics.pdf.PdfDocument;
 import android.os.Environment;
 import android.support.v7.app.AppCompatActivity;
@@ -12,18 +10,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
-import android.widget.TextView;
 import android.widget.Toast;
-
-import com.lowagie.text.Document; //Incluido en la biblioteca "droitText"
-import com.lowagie.text.DocumentException;
-import com.lowagie.text.Font;
-import com.lowagie.text.FontFactory;
-import com.lowagie.text.PageSize;
-import com.lowagie.text.Paragraph;
-import com.lowagie.text.Rectangle;
-import com.lowagie.text.pdf.PdfWriter;
-import com.lowagie.text.pdf.draw.DottedLineSeparator;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -36,8 +23,6 @@ import java.io.OutputStreamWriter;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 
-import harmony.java.awt.Color;
-
 public class MainActivity extends AppCompatActivity {
 
     public final static String TAG = MainActivity.class.getSimpleName();
@@ -45,7 +30,6 @@ public class MainActivity extends AppCompatActivity {
     private final static String NOMBRE_DIRECTORIO = "MiPDF";
     private final static String TEXTO = "Estoy probando como se hace un txt y parece que funciona. " +
             "Con los PDF no funciona y no se si es por el lugar de almacenamiento del fichero";
-    //private Document documento = new Document();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -56,10 +40,10 @@ public class MainActivity extends AppCompatActivity {
         boton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                pruebas();
-                //generarPDF();
+                generarPDF();
                 //generarTxtExt();
                 //generarTxtInt();
+                pruebas();
             }
         });
     }
@@ -229,8 +213,7 @@ public class MainActivity extends AppCompatActivity {
 
     public static File getRuta() {
 
-        // El fichero será almacenado en un directorio dentro del directorio
-        // Descargas
+        // El fichero será almacenado en un directorio dentro del directorio "Download"
         File ruta = null;
         if (Environment.MEDIA_MOUNTED.equals(Environment
                 .getExternalStorageState())) {
